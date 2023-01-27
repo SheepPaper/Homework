@@ -58,9 +58,12 @@ public class {
 			}
 		}
 
-		average = average / cnt;
-		
-		System.out.println("Средо аритметично на положителни числа: " + average);
+		if(cnt == 0) System.out.println("Няма положителни числа в масива");
+		else
+		{
+			average = average / cnt;
+			System.out.println("Средо аритметично на положителни числа: " + average);
+		}
 	}
 	
 	public static void sumOfMinAndMax(double[][] array)
