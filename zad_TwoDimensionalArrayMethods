@@ -1,0 +1,87 @@
+import java.util.Scanner;
+public class {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int n;
+		n = sc.nextInt();
+		
+		double[][] array = new double[n][n];
+		
+		input(array);
+		output(array);
+		averageOfPositiveValues(array);
+		sumOfMinAndMax(array);
+	}
+	
+	public static void input(double[][] array)
+	{
+		Scanner sc = new Scanner(System.in);
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			for(int j = 0; j < array.length; j++)
+			{
+				array[i][j] = sc.nextDouble();
+			}
+		}
+	}
+	
+	public static void output(double[][] array)
+	{
+		for(int i = 0; i < array.length; i++)
+		{
+			for(int j = 0; j < array.length; j++)
+			{
+				System.out.print(array[i][j] + " ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public static void averageOfPositiveValues(double[][] array)
+	{
+		double average = 0, cnt = 0;
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			for(int j = 0; j < array.length; j++)
+			{
+				if(array[i][j] > 0)
+				{
+					average += array[i][j]; 
+					cnt++;
+				}
+			}
+		}
+
+		average = average / cnt;
+		
+		System.out.println("Средо аритметично на положителни числа: " + average);
+	}
+	
+	public static void sumOfMinAndMax(double[][] array)
+	{
+		double min, max, sum;
+		
+		min = array[0][0];
+		max = array[0][0];
+		
+		for(int i = 0; i < array.length; i++)
+		{
+			for(int j = 1; j < array.length; j++)
+			{
+				if(array[i][j] < min) min = array[i][j];
+				if(array[i][j] > max) max = array[i][j];
+			}
+		}
+
+		sum = min + max;
+		
+		System.out.println("Сбор от минимална и максимална стойност: " + sum);
+	}
+
+}
