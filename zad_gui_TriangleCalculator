@@ -1,0 +1,188 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class zad_2 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtA;
+	private JTextField txtB;
+	private JTextField txtC;
+	private JTextField txtP;
+	private JTextField txtS;
+	private JTextField txtType;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					zad_2 frame = new zad_2();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public zad_2() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 430, 396);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.desktop);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel Sides = new JPanel();
+		Sides.setBackground(SystemColor.desktop);
+		Sides.setBounds(0, 0, 414, 418);
+		contentPane.add(Sides);
+		Sides.setLayout(null);
+		
+		JLabel lblTitle = new JLabel("\u041A\u0430\u043B\u043A\u0443\u043B\u0430\u0442\u043E\u0440 \u043D\u0430 \u0442\u0440\u0438\u044A\u0433\u044A\u043B\u043D\u0438\u043A");
+		lblTitle.setForeground(new Color(255, 255, 255));
+		lblTitle.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 23));
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setBounds(0, 0, 343, 66);
+		Sides.add(lblTitle);
+		
+		JLabel lblA = new JLabel("a = ");
+		lblA.setHorizontalAlignment(SwingConstants.CENTER);
+		lblA.setForeground(Color.WHITE);
+		lblA.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		lblA.setBounds(10, 77, 51, 47);
+		Sides.add(lblA);
+		
+		JLabel lblB = new JLabel("b = ");
+		lblB.setHorizontalAlignment(SwingConstants.CENTER);
+		lblB.setForeground(Color.WHITE);
+		lblB.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		lblB.setBounds(10, 124, 51, 47);
+		Sides.add(lblB);
+		
+		JLabel lblC = new JLabel("c = ");
+		lblC.setHorizontalAlignment(SwingConstants.CENTER);
+		lblC.setForeground(Color.WHITE);
+		lblC.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		lblC.setBounds(10, 171, 51, 47);
+		Sides.add(lblC);
+		
+		txtA = new JTextField();
+		txtA.setHorizontalAlignment(SwingConstants.CENTER);
+		txtA.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		txtA.setBounds(58, 83, 35, 36);
+		Sides.add(txtA);
+		txtA.setColumns(10);
+		
+		txtB = new JTextField();
+		txtB.setHorizontalAlignment(SwingConstants.CENTER);
+		txtB.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		txtB.setColumns(10);
+		txtB.setBounds(58, 130, 35, 36);
+		Sides.add(txtB);
+		
+		txtC = new JTextField();
+		txtC.setHorizontalAlignment(SwingConstants.CENTER);
+		txtC.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		txtC.setColumns(10);
+		txtC.setBounds(58, 178, 35, 36);
+		Sides.add(txtC);
+		
+		JLabel lblP = new JLabel("\u041F\u0435\u0440\u0438\u043C\u0435\u0442\u044A\u0440:");
+		lblP.setHorizontalAlignment(SwingConstants.LEFT);
+		lblP.setForeground(Color.WHITE);
+		lblP.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 18));
+		lblP.setBounds(132, 77, 103, 36);
+		Sides.add(lblP);
+		
+		JLabel lblS = new JLabel("\u041B\u0438\u0446\u0435:");
+		lblS.setHorizontalAlignment(SwingConstants.LEFT);
+		lblS.setForeground(Color.WHITE);
+		lblS.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 18));
+		lblS.setBounds(184, 129, 51, 36);
+		Sides.add(lblS);
+		
+		txtP = new JTextField();
+		txtP.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		txtP.setColumns(10);
+		txtP.setBounds(245, 77, 158, 36);
+		Sides.add(txtP);
+		
+		txtS = new JTextField();
+		txtS.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		txtS.setColumns(10);
+		txtS.setBounds(245, 133, 157, 36);
+		Sides.add(txtS);
+		
+		JLabel lblS_1 = new JLabel("\u0412\u0438\u0434:");
+		lblS_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblS_1.setForeground(Color.WHITE);
+		lblS_1.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 18));
+		lblS_1.setBounds(194, 185, 41, 36);
+		Sides.add(lblS_1);
+		
+		txtType = new JTextField();
+		txtType.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		txtType.setColumns(10);
+		txtType.setBounds(245, 189, 155, 36);
+		Sides.add(txtType);
+		
+		JButton btnCalc = new JButton("\u041F\u0440\u0435\u0441\u043C\u0435\u0442\u043D\u0438");
+		btnCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				C = txtC.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				c = Double.parseDouble(C);
+				
+				double p, s, P;
+				
+				P = a + b + c;
+				p = P / 2;
+				
+				s = Math.sqrt(p * (p - a) * (p - b) * (p - c));
+				
+				String type;
+				
+				if(a == b && b == c) type = "Равностранен";
+				else if(a == b || a == c || b == c) type = "Равнобедрен";
+				else type = "Разностранен";
+				
+				txtType.setText(type);
+				txtS.setText(Double.toString(s) + "м.ед.^2");
+				txtP.setText(Double.toString(P) + "м.ед.");
+			}
+		});
+		btnCalc.setForeground(Color.LIGHT_GRAY);
+		btnCalc.setBackground(Color.DARK_GRAY);
+		btnCalc.setFont(new Font("Yu Gothic UI Semibold", Font.PLAIN, 19));
+		btnCalc.setBounds(127, 277, 160, 54);
+		Sides.add(btnCalc);
+	}
+}
