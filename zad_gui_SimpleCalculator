@@ -1,0 +1,286 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Toolkit;
+import javax.swing.JLabel;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.UIManager;
+
+
+public class zad_3 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtA;
+	private JTextField txtB;
+	private JTextField txtAnswer;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					zad_3 frame = new zad_3();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public zad_3() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\User\\Desktop\\unnamed.png"));
+		setTitle("\u041A\u0430\u043B\u043A\u0443\u043B\u0430\u0442\u043E\u0440");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 447, 446);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 64, 128));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblTitleA = new JLabel("A =");
+		lblTitleA.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitleA.setForeground(new Color(255, 255, 255));
+		lblTitleA.setFont(new Font("Cambria Math", Font.PLAIN, 25));
+		lblTitleA.setBounds(87, 11, 47, 58);
+		contentPane.add(lblTitleA);
+		
+		txtA = new JTextField();
+		txtA.setFont(new Font("Cambria Math", Font.PLAIN, 25));
+		txtA.setBounds(138, 17, 64, 46);
+		contentPane.add(txtA);
+		txtA.setColumns(10);
+		
+		JLabel lblTitleB = new JLabel("B =");
+		lblTitleB.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitleB.setForeground(Color.WHITE);
+		lblTitleB.setFont(new Font("Cambria Math", Font.PLAIN, 25));
+		lblTitleB.setBounds(224, 11, 47, 58);
+		contentPane.add(lblTitleB);
+		
+		txtB = new JTextField();
+		txtB.setFont(new Font("Cambria Math", Font.PLAIN, 25));
+		txtB.setColumns(10);
+		txtB.setBounds(274, 17, 64, 46);
+		contentPane.add(txtB);
+		
+		JButton btnSum = new JButton("A + B");
+		btnSum.setBackground(UIManager.getColor("Button.focus"));
+		btnSum.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = a + b;
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);
+			}
+		});
+		btnSum.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnSum.setBounds(20, 80, 182, 46);
+		contentPane.add(btnSum);
+		
+		JButton btnDif = new JButton("A - B");
+		btnDif.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = a - b;
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);
+			}
+		});
+		btnDif.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnDif.setBounds(20, 147, 182, 46);
+		contentPane.add(btnDif);
+		
+		JButton btnMul = new JButton("A \u00D7 B");
+		btnMul.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = a * b;
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);
+			}
+		});
+		btnMul.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnMul.setBounds(20, 214, 182, 46);
+		contentPane.add(btnMul);
+		
+		JButton btnDiv = new JButton("A \u00F7 B");
+		btnDiv.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = a / b;
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);
+			}
+		});
+		btnDiv.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnDiv.setBounds(20, 281, 182, 46);
+		contentPane.add(btnDiv);
+		
+		JButton btnPow = new JButton("A\u1D2E");
+		btnPow.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = Math.pow(a, b);
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);
+			}
+		});
+		btnPow.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnPow.setBounds(224, 80, 182, 46);
+		contentPane.add(btnPow);
+		
+		JButton btnSqr = new JButton("\u1D2E\u221AA");
+		btnSqr.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				for(int i = 0; i < Math.floor(b) - 1; i++)
+				{
+					a = Math.sqrt(a);
+				}
+				
+				c = a;
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);			
+			}
+		});
+		btnSqr.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnSqr.setBounds(224, 147, 182, 46);
+		contentPane.add(btnSqr);
+		
+		JButton btnPer = new JButton("B%(A)");
+		btnPer.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = a * (b / 100);
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);				
+			}
+		});
+		btnPer.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnPer.setBounds(224, 214, 182, 46);
+		contentPane.add(btnPer);
+		
+		JButton btnAve = new JButton("Average");
+		btnAve.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double a, b, c;
+				String A, B, C;
+				
+				A = txtA.getText();
+				B = txtB.getText();
+				
+				a = Double.parseDouble(A);
+				b = Double.parseDouble(B);
+				
+				c = (a + b) / 2;
+				
+				C = String.valueOf(c);
+				txtAnswer.setText(C);				
+			}
+		});
+		btnAve.setFont(new Font("Cambria Math", Font.PLAIN, 23));
+		btnAve.setBounds(224, 281, 182, 46);
+		contentPane.add(btnAve);
+		
+		JLabel lblAnswer = new JLabel("Answer:");
+		lblAnswer.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAnswer.setForeground(Color.WHITE);
+		lblAnswer.setFont(new Font("Cambria Math", Font.PLAIN, 25));
+		lblAnswer.setBounds(108, 338, 94, 58);
+		contentPane.add(lblAnswer);
+		
+		txtAnswer = new JTextField();
+		txtAnswer.setHorizontalAlignment(SwingConstants.CENTER);
+		txtAnswer.setFont(new Font("Cambria Math", Font.PLAIN, 25));
+		txtAnswer.setColumns(10);
+		txtAnswer.setBounds(224, 338, 101, 46);
+		contentPane.add(txtAnswer);
+	}
+}
