@@ -1,0 +1,183 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import java.awt.Color;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+
+public class zad_4 extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField txtNum;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					zad_4 frame = new zad_4();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public zad_4() {
+		setTitle("\u0414\u0435\u043B\u0438\u0442\u0435\u043B");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 470, 485);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(175, 238, 238));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\u0414\u0435\u043B\u0438\u0442\u0435\u043B \u043D\u0430 7");
+		lblNewLabel.setForeground(new Color(0, 0, 128));
+		lblNewLabel.setBackground(new Color(0, 0, 139));
+		lblNewLabel.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 25));
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBounds(0, 0, 454, 43);
+		contentPane.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u0427\u0438\u0441\u043B\u043E:");
+		lblNewLabel_1.setForeground(new Color(0, 0, 128));
+		lblNewLabel_1.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblNewLabel_1.setBackground(new Color(0, 0, 139));
+		lblNewLabel_1.setBounds(157, 54, 73, 31);
+		contentPane.add(lblNewLabel_1);
+		
+		txtNum = new JTextField();
+		txtNum.setHorizontalAlignment(SwingConstants.CENTER);
+		txtNum.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		txtNum.setBounds(229, 54, 67, 31);
+		contentPane.add(txtNum);
+		txtNum.setColumns(10);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("\u0427\u0438\u0441\u043B\u0430\u0442\u0430, \u0434\u0435\u043B\u044F\u0449\u0438 \u0441\u0435 \u043D\u0430 7:");
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setForeground(new Color(0, 0, 128));
+		lblNewLabel_1_1.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblNewLabel_1_1.setBackground(new Color(0, 0, 139));
+		lblNewLabel_1_1.setBounds(0, 96, 454, 31);
+		contentPane.add(lblNewLabel_1_1);
+		
+		JLabel lblNumbers = new JLabel("");
+		lblNumbers.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNumbers.setForeground(new Color(0, 0, 128));
+		lblNumbers.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblNumbers.setBackground(new Color(0, 0, 139));
+		lblNumbers.setBounds(0, 127, 454, 31);
+		contentPane.add(lblNumbers);
+		
+		JLabel lblNewLabel_1_1_1_1_1 = new JLabel("\u0421\u0443\u043C\u0430 \u043E\u0442 \u0447\u0438\u0441\u043B\u0430\u0442\u0430:");
+		lblNewLabel_1_1_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_1_1_1.setForeground(new Color(0, 0, 128));
+		lblNewLabel_1_1_1_1_1.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblNewLabel_1_1_1_1_1.setBackground(new Color(0, 0, 139));
+		lblNewLabel_1_1_1_1_1.setBounds(0, 169, 454, 31);
+		contentPane.add(lblNewLabel_1_1_1_1_1);
+		
+		JLabel lblSum = new JLabel("");
+		lblSum.setHorizontalAlignment(SwingConstants.CENTER);
+		lblSum.setForeground(new Color(0, 0, 128));
+		lblSum.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblSum.setBackground(new Color(0, 0, 139));
+		lblSum.setBounds(0, 200, 454, 31);
+		contentPane.add(lblSum);
+		
+		JLabel lblNewLabel_1_1_1_1_1_2 = new JLabel("\u041F\u0440\u043E\u0438\u0437\u0432\u0435\u0434\u0435\u043D\u0438\u0435 \u043E\u0442 \u0447\u0438\u0441\u043B\u0430\u0442\u0430:");
+		lblNewLabel_1_1_1_1_1_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_1_1_1_2.setForeground(new Color(0, 0, 128));
+		lblNewLabel_1_1_1_1_1_2.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblNewLabel_1_1_1_1_1_2.setBackground(new Color(0, 0, 139));
+		lblNewLabel_1_1_1_1_1_2.setBounds(0, 242, 454, 31);
+		contentPane.add(lblNewLabel_1_1_1_1_1_2);
+		
+		JLabel lblMul = new JLabel("");
+		lblMul.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMul.setForeground(new Color(0, 0, 128));
+		lblMul.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 19));
+		lblMul.setBackground(new Color(0, 0, 139));
+		lblMul.setBounds(0, 273, 454, 31);
+		contentPane.add(lblMul);
+		
+		JButton btnClear = new JButton("\u0418\u0437\u0447\u0438\u0441\u0442\u0438");
+		btnClear.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				txtNum.setText("");
+				lblNumbers.setText("");
+				lblSum.setText("");
+				lblMul.setText("");
+			}
+		});
+		btnClear.setBackground(new Color(64, 64, 64));
+		btnClear.setForeground(new Color(175, 238, 238));
+		btnClear.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 18));
+		btnClear.setBounds(93, 315, 114, 43);
+		contentPane.add(btnClear);
+		
+		JButton btnExit = new JButton("\u0418\u0437\u0445\u043E\u0434");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				System.exit(0);
+			}
+		});
+		btnExit.setForeground(new Color(175, 238, 238));
+		btnExit.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 18));
+		btnExit.setBackground(Color.DARK_GRAY);
+		btnExit.setBounds(247, 315, 114, 43);
+		contentPane.add(btnExit);
+		
+		JButton btnCalc = new JButton("\u041F\u0440\u0435\u0441\u043C\u0435\u0442\u043D\u0438");
+		btnCalc.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				int num, sum = 0, mul = 1;
+				String nums = "";
+				
+				num = Integer.parseInt(txtNum.getText());
+				
+				for(int i = num; i > 0; i--)
+				{
+					if(i % 7 == 0) 
+					{
+						nums += Integer.toString(i);
+						nums += ", ";
+						
+						sum += i;
+						mul *= i;
+					}
+				}
+        
+				nums = nums.substring(0, nums.length() - 2);
+				
+				lblNumbers.setText(nums);
+				lblSum.setText(Integer.toString(sum));
+				lblMul.setText(Integer.toString(mul));
+			}
+		});
+		btnCalc.setForeground(new Color(175, 238, 238));
+		btnCalc.setFont(new Font("MS Reference Sans Serif", Font.PLAIN, 18));
+		btnCalc.setBackground(Color.DARK_GRAY);
+		btnCalc.setBounds(156, 382, 142, 43);
+		contentPane.add(btnCalc);
+	}
+}
