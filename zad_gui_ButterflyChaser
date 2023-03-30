@@ -1,0 +1,95 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import java.awt.Color;
+import java.lang.Math;
+public class zad_5 extends JFrame {
+
+	private JPanel contentPane;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					zad_5 frame = new zad_5();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	int cnt = 0;
+	double times;
+	public zad_5() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1017, 517);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JLabel lblTitle = new JLabel("\u0425\u0432\u0430\u043D\u0430\u0445\u0442\u0435  \u043F\u0435\u043F\u0440\u0443\u0434\u0430\u0442\u0430!");
+		lblTitle.setForeground(new Color(51, 153, 51));
+		lblTitle.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTitle.setFont(new Font("Palatino Linotype", Font.PLAIN, 50));
+		lblTitle.setBounds(0, 0, 1001, 478);
+		contentPane.add(lblTitle);
+		
+		lblTitle.setVisible(false);
+		
+		JButton btnButterfly = new JButton("");
+		btnButterfly.setOpaque(false);
+		btnButterfly.setContentAreaFilled(false);
+		btnButterfly.setBorderPainted(false);
+		
+		
+		btnButterfly.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				double x, y;
+				
+				x = Math.random() * 830;
+				y = Math.random() * 330;
+				btnButterfly.setLocation((int)x, (int)y);
+				
+				times = Math.random() * 40;
+				int t = (int)Math.round(times);
+				
+				cnt++;
+				if(cnt >= t)
+					{
+					btnButterfly.setVisible(false);
+					lblTitle.setVisible(true);
+					}
+			}
+		});
+		btnButterfly.setIcon(new ImageIcon(zad_5.class.getResource("/zad_5/butterflyyy.png")));
+		btnButterfly.setBounds(391, 158, 166, 156);
+		contentPane.add(btnButterfly);
+		
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(zad_5.class.getResource("/zad_5/photo-1602615576820-ea14cf3e476a.jpg")));
+		lblNewLabel.setBounds(0, 0, 1001, 478);
+		contentPane.add(lblNewLabel);
+	}
+}
