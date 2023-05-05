@@ -1,0 +1,150 @@
+import java.awt.EventQueue;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.*;  
+
+public class zad_6 extends JFrame {
+
+	private JPanel panel;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					zad_6 frame = new zad_6();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public zad_6() {
+		setTitle("\u0410\u0432\u0442\u043E\u043A\u044A\u0449\u0430 \u041A\u0438\u043B\u043E\u043C\u0435\u0442\u044A\u0440");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 736, 557);
+		panel = new JPanel();
+		panel.setBackground(Color.DARK_GRAY);
+		panel.setBorder(new EmptyBorder(5, 5, 5, 5));
+
+		setContentPane(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("\u0410\u0432\u0442\u043E\u043A\u044A\u0449\u0430 \u041A\u0438\u043B\u043E\u043C\u0435\u0442\u044A\u0440");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Segoe UI", Font.PLAIN, 25));
+		lblNewLabel.setBounds(0, 0, 720, 89);
+		panel.add(lblNewLabel);
+		
+		JLabel lblNewLabel_1 = new JLabel("\u041C\u0430\u0440\u043A\u0430:");
+		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		lblNewLabel_1.setBounds(0, 100, 240, 35);
+		panel.add(lblNewLabel_1);
+		
+		JLabel lblNewLabel_1_1 = new JLabel("\u0413\u043E\u0434\u0438\u043D\u0430:");
+		lblNewLabel_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		lblNewLabel_1_1.setBounds(250, 100, 240, 35);
+		panel.add(lblNewLabel_1_1);
+		
+		JLabel lblNewLabel_1_1_1 = new JLabel("\u0426\u0432\u044F\u0442:");
+		lblNewLabel_1_1_1.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_1_1.setFont(new Font("Segoe UI", Font.PLAIN, 16));
+		lblNewLabel_1_1_1.setBounds(480, 100, 240, 35);
+		panel.add(lblNewLabel_1_1_1);
+		
+		JComboBox cbBrand = new JComboBox();
+		cbBrand.setFont(new Font("Segoe UI", Font.PLAIN, 19));
+		cbBrand.setModel(new DefaultComboBoxModel(new String[] {"", "Porsche", "Toyota", "Ford", "Mercedes-Benz", "Honda", "Subaru", "BMW"}));
+		cbBrand.setBackground(Color.LIGHT_GRAY);
+		cbBrand.setBounds(15, 146, 210, 40);
+		panel.add(cbBrand);
+		
+		JComboBox cbYear = new JComboBox();
+		cbYear.setModel(new DefaultComboBoxModel(new String[] {"", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"}));
+		cbYear.setFont(new Font("Segoe UI", Font.PLAIN, 19));
+		cbYear.setBackground(Color.LIGHT_GRAY);
+		cbYear.setBounds(255, 146, 210, 40);
+		panel.add(cbYear);
+		
+		JComboBox cbColour = new JComboBox();
+		cbColour.setModel(new DefaultComboBoxModel(new String[] {"", "\u0427\u0435\u0440\u0435\u043D", "\u0421\u0440\u0435\u0431\u0440\u0438\u0441\u0442", "\u0411\u044F\u043B", "\u0427\u0435\u0440\u0432\u0435\u043D", "\u0416\u044A\u043B\u0442", "\u0422\u044A\u043C\u043D\u043E\u0441\u0438\u043D", "\u0422\u044A\u043C\u043D\u043E\u0437\u0435\u043B\u0435\u043D", "\u041B\u0438\u043B\u0430\u0432", "\u0416\u044A\u043B\u0442", "\u0421\u0432\u0435\u0442\u043B\u043E\u0437\u0435\u043B\u0435\u043D", "\u0421\u0432\u0435\u0442\u043B\u043E\u0441\u0438\u043D"}));
+		cbColour.setFont(new Font("Segoe UI", Font.PLAIN, 19));
+		cbColour.setBackground(Color.LIGHT_GRAY);
+		cbColour.setBounds(495, 146, 210, 40);
+		panel.add(cbColour);
+		
+		JLabel lblNewLabel_2 = new JLabel("\u041F\u0440\u0438 \u0437\u0430\u044F\u0432\u044F\u0432\u0430\u043D\u0435 \u043D\u0430 \u043A\u043E\u043B\u0430 \u0441 \u0447\u0435\u0440\u0432\u0435\u043D \u0446\u0432\u044F\u0442 \u0449\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u0435 \u043F\u0440\u043E\u043C\u043E \u043A\u043E\u0434 \u0437\u0430 10% \u043E\u0442\u0441\u0442\u044A\u043F\u043A\u0430");
+		lblNewLabel_2.setBackground(new Color(0, 0, 0));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setForeground(new Color(204, 51, 51));
+		lblNewLabel_2.setFont(new Font("Segoe UI", Font.BOLD, 17));
+		lblNewLabel_2.setBounds(15, 429, 690, 89);
+		panel.add(lblNewLabel_2);
+		
+		
+		
+		JButton btnNewButton_1 = new JButton("\u0418\u0437\u0445\u043E\u0434");
+		btnNewButton_1.setBackground(Color.LIGHT_GRAY);
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				System.exit(0);
+			}
+		});
+		
+		btnNewButton_1.setFont(new Font("Segoe UI", Font.PLAIN, 23));
+		btnNewButton_1.setBounds(360, 316, 150, 54);
+		panel.add(btnNewButton_1);
+		
+		JButton btnNewButton = new JButton("\u0417\u0430\u044F\u0432\u043A\u0430");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				String brand, year, colour;
+				boolean discount = false;
+				double num;
+				int code = 1000;
+				
+				num = Math.random() * 8999;
+				code += (int)num;
+				
+				brand = cbBrand.getSelectedItem().toString();
+				year = cbYear.getSelectedItem().toString();
+				colour = cbColour.getSelectedItem().toString();
+				
+				if(colour == "Червен") discount = true;
+				
+				if (brand == "" || year == "" || colour == "") JOptionPane.showMessageDialog(null,"Въвели сте грешни данни. Моля опитайте отново.","Грешка",2);
+				else if(discount == true) JOptionPane.showMessageDialog(null,"Вашата заявка беше изпратена!\nМарка: " + brand + "\nГодина: " + year + "\nЦвят: " + colour + "\nВашият промокод е " + code + "\nБлагодарим Ви, че избрахте Автокъща \"Километър\"!","Заявка",1);
+				else JOptionPane.showMessageDialog(null,"Вашата заявка беше изпратена!\nМарка: " + brand + "\nГодина: " + year + "\nЦвят: " + colour + "\nБлагодарим Ви, че избрахте Автокъща \"Километър\"!","Заявка",1);
+			}
+		});
+		btnNewButton.setBackground(Color.LIGHT_GRAY);
+		btnNewButton.setFont(new Font("Segoe UI", Font.PLAIN, 23));
+		btnNewButton.setBounds(180, 316, 150, 54);
+		panel.add(btnNewButton);
+	}
+}
